@@ -51,7 +51,7 @@ public class CliApp {
 
             for(final Row row : sheet) {
                 final Cell cell = row.getCell(1);
-                if(cell.getCellType() == CellType.STRING) {
+                if(cell != null && cell.getCellType() == CellType.STRING) {
                     final String value = cell.getStringCellValue();
                     try {
                         final BigInteger val = new BigInteger(value);
